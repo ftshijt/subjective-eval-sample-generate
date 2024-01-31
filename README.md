@@ -14,7 +14,12 @@ python generate_scp.py <wave_flle_folders> <target_scp_path>
 ## Step3
 Use process_sub_test.py to generate the eval data
 ```
-python process_sub_test.py --target_dir <target_dir> --sys_scp <the_first_system> --sys_scp <the_second_system> ... --sample_per_sys <number of samples selected for each system> --trap_utt <number of trap utterances>
+python process_sub_test.py \
+    --target_dir <target_dir> \
+    --sys_scp <the_first_system> \
+    --sys_scp <the_second_system> ... \
+    --sample_per_sys <number of samples selected for each system> \
+    --trap_utt <number of trap utterances>
 ```
 
 Remember to remove the generated sys_info.txt for the raters.
