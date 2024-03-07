@@ -75,16 +75,14 @@ if __name__ == "__main__":
             os.system("sox {} {}".format(final_list[i], target_wav))
         else:
             rand = random.random()
-            if rand < 0.2:
+            if rand < 0.25:
                 os.system("sox {} {} synth whitenoise vol 0.9 remix -".format(final_list[i], target_wav))
-            elif rand < 0.4:
+            elif rand < 0.5:
                 os.system("sox {} {} speed 5.0".format(final_list[i], target_wav))
-            elif rand < 0.6:
+            elif rand < 0.75:
                 os.system("sox {} {} trim 0 `soxi -D {}`".format(final_list[i], target_wav, final_list[i]))
-            elif rand < 0.8:
-                os.system("sox {} {} vol 0.0001".format(final_list[i], target_wav))
             else:
-                os.system("sox {} {} reverb 80 20 100 50 0".format(final_list[i], target_wav))
+                os.system("sox {} {} vol 0.0001".format(final_list[i], target_wav))
         
         info_file.write("{} {} {}\n".format(write_id, back_info[final_list[i]], "trap" if final_list[i] in trap_path_list else "normal"))
         score_file.write("{},\n".format(write_id))
